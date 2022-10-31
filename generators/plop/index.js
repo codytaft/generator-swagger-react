@@ -1,6 +1,4 @@
 const Generator = require('yeoman-generator');
-const process = require('process');
-const util = require('util');
 
 module.exports = class extends Generator {
   constructor(args, opts) {
@@ -20,7 +18,7 @@ module.exports = class extends Generator {
   }
 
   async default() {
-    var done = this.async();
+    const done = this.async();
 
     const { parsedSwagger, swaggerURL } = this.props;
     this.processTask = async function (task) {
@@ -47,7 +45,7 @@ module.exports = class extends Generator {
         ],
       });
     });
-    await this.processTask({
+    this.processTask({
       cmd: 'plop',
       args: [
         '--plopfile',
@@ -60,34 +58,9 @@ module.exports = class extends Generator {
         `${parsedSwagger.info.title}`,
       ],
     });
+    this.processTask({
+      cmd: 'plop',
+      args: ['--plopfile', `${__dirname}/plopfile.js`, `app`],
+    });
   }
 };
-
-// cleanUp() {
-//TODO delete components folder and any other files created
-// }
-
-//   async writing() {
-//     const { parsedSwagger, swaggerURL } = this.props;
-
-//     console.log('writing');
-//     this.fs.copyTpl(
-//       this.templatePath('react-template'),
-//       this.destinationRoot(),
-//       {
-//         title: parsedSwagger.info.title,
-//         description: parsedSwagger.info.description,
-//       },
-//       {
-//         // Include dotfiles
-//         globOptions: {
-//           dot: true,
-//         },
-//       }
-//     );
-//     // await this.processTask({
-//     //   cmd: 'openapi-codegen',
-//     //   args: ['gen'],
-//     // });
-//   }
-// };

@@ -1,4 +1,6 @@
-module.exports = function ({ setGenerator, setPrompt }) {
+module.exports = function ({ setGenerator, load }) {
+  load('plop-action-copy');
+
   setGenerator('component', {
     description: 'Generate a new component',
     prompts: [
@@ -41,6 +43,24 @@ module.exports = function ({ setGenerator, setPrompt }) {
         type: 'add',
         path: '../app/templates/react-template/openapi-codegen.config.ts',
         templateFile: 'templates/openapi-config-template.hbs',
+        force: true,
+      },
+    ],
+  });
+  setGenerator('app', {
+    description: 'Generate a new App component',
+    prompts: [],
+    actions: [
+      // {
+      //   type: 'copy',
+      //   src: 'templates/App.tsx',
+      //   dest: '../app/templates/react-template/src/App.tsx',
+      //   force: true,
+      // },
+      {
+        type: 'add',
+        path: '../app/templates/react-template/src/App.tsx',
+        templateFile: 'templates/App.hbs',
         force: true,
       },
     ],
