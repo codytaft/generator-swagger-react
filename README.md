@@ -15,6 +15,8 @@
 ## To Run
 
 - Have swagger URL ready: ie. `https://api.swaggerhub.com/apis/CODYTAFT/PetStore/1.0.0#/`
+- Create and navigate to new directory: `mkdir new-dir && cd new-dir`
 - Install generator: `npm install -g generator-react-swagger`
 - Run generator: `yo react-swagger`
 - Follow Prompts
+- Run codgen with swagger-title in lowercase to generate api `npx openapi-codegen gen [swagger-title]`
