@@ -18,6 +18,7 @@ module.exports = function ({ setGenerator, setPrompt }) {
         type: 'add',
         path: '../app/templates/react-template/src/components/{{name}}/index.js',
         templateFile: 'templates/component.hbs',
+        force: true,
       },
     ],
   });
@@ -40,6 +41,7 @@ module.exports = function ({ setGenerator, setPrompt }) {
         type: 'add',
         path: '../app/templates/react-template/openapi-codegen.config.ts',
         templateFile: 'templates/openapi-config-template.hbs',
+        force: true,
       },
     ],
   });
