@@ -17,26 +17,16 @@ module.exports = class extends Generator {
         message: 'Input swagger.yaml url',
       },
     ]);
-
-    this.displayName = await this.prompt([
-      {
-        type: 'input',
-        name: 'name',
-        message: 'Project Display name',
-      },
-    ]);
   }
 
   async default() {
     this.props = {
       swaggerDoc: this.swaggerDoc.url,
-      displayName: this.displayName.name,
     };
-    const { swaggerDoc, displayName } = this.props;
+    const { swaggerDoc } = this.props;
     const api = await parser.validate(`${swaggerDoc}`);
 
     this.api = api;
-    // console.log(util.inspect(this.api, false, null, true /* enable colors */))
     await this.composeWith(require.resolve('../plop'), {
       parsedSwagger: api,
       swaggerURL: this.swaggerDoc.url,

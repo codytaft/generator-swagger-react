@@ -14,5 +14,7 @@
 
 ## To Run
 
-- Install `npm install`
-- 
+- Have swagger URL ready: ie. `https://api.swaggerhub.com/apis/CODYTAFT/PetStore/1.0.0#/`
+- Install generator: `npm install -g generator-react-swagger`
+- Run generator: `yo react-swagger`
+- Follow Prompts
