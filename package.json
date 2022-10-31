@@ -1,0 +1,19 @@
+{
+  "name": "generator-react-swagger",
+  "version": "1.0.0",
+  "description": "react swagger code generator",
+  "files": [
+    "generators"
+  ],
+  "keywords": [
+    "yeoman-generator"
+  ],
+  "author": "cody taft",
+  "license": "MIT",
+  "dependencies": {
+    "@apidevtools/swagger-parser": "^10.1.0",
+    "@openapitools/openapi-generator-cli": "^2.5.2",
+    "plop": "^3.1.1",
+    "yeoman-generator": "^5.7.0"
+  }
+}

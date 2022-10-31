@@ -1,0 +1,18 @@
+import React from 'react';
+
+/**
+ * {{name}} component
+ * {{description}}
+ */
+
+export default function {{name}}({ {{#each props}}
+    {{this.name}} = {{{this.value}}},{{/each}}
+    className,
+    ...attrs
+}) {
+    return (
+        <div className={className} {...attrs} >
+            <p>{{description}}</p> 
+        </div>
+    );
+}

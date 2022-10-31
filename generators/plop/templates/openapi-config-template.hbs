@@ -1,0 +1,24 @@
+import {
+  generateSchemaTypes,
+  generateFetchers,
+} from "@openapi-codegen/typescript";
+import { defineConfig } from "@openapi-codegen/cli";
+export default defineConfig({
+  {{swaggerTitle}}: {
+    from: {
+      source: "url",
+      url: "{{swaggerURL}}",
+    },
+    outputDir: "src/api/",
+    to: async (context) => {
+      const filenamePrefix = "{{swaggerTitle}}";
+      const { schemasFiles } = await generateSchemaTypes(context, {
+        filenamePrefix,
+      });
+      await generateFetchers(context, {
+        filenamePrefix,
+        schemasFiles,
+      });
+    },
+  },
+});
