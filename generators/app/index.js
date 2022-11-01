@@ -49,13 +49,17 @@ module.exports = class extends Generator {
   }
   install() {
     console.log('installing all');
+    this.fs.delete(`${__dirname}/templates/react-template/src/components/*`);
+    this.fs.delete(
+      `${__dirname}/templates/react-template/openapi-codegen.config.ts`
+    );
   }
   async end() {
+    console.log('CLEAN UP!');
     // await this.spawnCommand('npx', [
     //   'openapi-codegen',
     //   'gen',
     //   `${this.api.info.title.toLowerCase()}`,
     // ]);
-    console.log('the end');
   }
 };

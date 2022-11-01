@@ -21,6 +21,7 @@
 - Install generator: `npm install -g generator-react-swagger`
 - Run generator: `yo react-swagger`
 - Follow Prompts
+- At the end there will be conflicts. press `a` to accept them all as this cleans up the temp files
 - Run codgen with swagger-title in lowercase to generate api `npx openapi-codegen gen [swagger-title]`
 
 ## TODO
